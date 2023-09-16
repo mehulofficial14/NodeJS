@@ -84,5 +84,98 @@ console.log()
 * Browsers have window object that represents global scope
 * The function "console.log()" is prefixed automatically by the Javascript engine with "window" so it is treated like "window.console.log()"
 * The below code declaring a variable like "var x = 1" is also present in the window object like "window.x" which is 1 in this case
-* In Node, window objject is not present
-* Use "global" in Node but this does NOT store variables
+* In Node, window object is not present
+* Use "global" in Node but this does not store variables
+
+3. **Modules**
+
+* A function defined in browser can be overwritten by the function of the same name declared in another file
+* The "window" object overwrites the function
+* Building modules (encapsulation) eleminates overwriting of functions and variables
+* Every file in Node is a module and the functions and variables are private to the module
+* The export is used to use functions and variables outside a module by making it public
+* The "module" object is not global
+
+4. **Creating a Module**
+
+* Create a file having a function and a variable and print the module to check the exports in that file
+* Use the following to get the list of exports in a module
+```
+console.log(module);
+```
+
+5. **Loading a Module**
+
+* Use the require() function to load a module that is not present in browsers
+* Requires path of the module to be loaded
+* Use "const" to store the module
+* Use "jshint" to get the errors in the module
+```
+jshint app.js
+```
+* The export of single fnction instead of object
+```
+module.exports = log;
+```
+
+6. **Module Wrapper Function**
+
+* Code inside a file is wrapped inside a function by default that has many parameters local to the module
+* IIFE (Immediately-invoked Function Expression) is the function and is used to create the scope
+
+7. **Path Module**
+
+* Useful inbuilt modules in Node like filesystem, http, query strings, path, os, process, stream
+* Arguement without path in require() function is assumed to be a built-in module in Node
+* The "path" module has a function called parse() that helps in getting details of the path
+
+8. **OS Module**
+
+* Many in-built functions like freemem(), totalmem(), userInfo(), uptime()
+* Use of ECMA Script (or ES6 or ES2015)
+```
+var totalMemory = os.totalmem();
+console.log(`Total Memory: ${totalMemory}`);
+```
+* Node helps in executing code outside of the browser
+
+9. **File System Module**
+
+* Working with files using the "fs" module
+* Functions in "fs" of synchronous and asynchronous type
+* Use asynchronous functions in applications to serve many clients 
+* Requires a function as an arguement that is called after the asynchronous process is completed (a callback)
+* 
+
+10. **Events Module**
+
+* Event is a signal that something occured in the application
+* Event is raised in Node
+* Event contains many classes (container for properties and functions also known as methods)
+* Class is used by making a new object of it
+* Classes define the properties and behaviour
+* Actual instance of a class is an object
+* The emit() function is used to raise an event or raise a signal
+* The listener function is called when a signal is raised
+* The listner contains a callback function that is executed when the signal is raised or the event is triggered
+* The event or signal is raised after registering a listner
+* The event calls all the listners to check the appropriate listner in a synchronous manner
+
+11. **Event Arguements**
+
+* Emitter sending data about the event to the listner
+* Sending data in the form an encapsulation or an object called event arguement
+* The "function" keyword is eliminated and the arguements are seperated with the body by the arrow function or "=>"
+
+12. **Extending EventEmitter**
+
+* The EventEmitter object is rarely used
+* Create and use class having all capabilities of the EventEmitter class
+* Function inside a class is a method
+
+13. **HTTP Module**
+
+* Creating network in applications
+* Server listens on port number and raises an event whenever there is a new request
+* Code gets more complex using "http" module
+* Use "express" instead
