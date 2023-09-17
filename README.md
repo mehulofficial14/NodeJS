@@ -179,3 +179,181 @@ console.log(`Total Memory: ${totalMemory}`);
 * Server listens on port number and raises an event whenever there is a new request
 * Code gets more complex using "http" module
 * Use "express" instead
+
+## Node Package Manager (NPM)
+
+1. **Introduction**
+
+* NPM is installed with Node
+* To check the NPM version 
+```
+npm -v
+```
+
+2. **Package.json**
+
+* JSON file to include basic information about the application
+* Meta-data about the application
+* Present in every node application
+* To create package.json
+```
+npm init --yes
+```
+* Every node module has its own package.json
+
+3. **Installing a Node Package**
+
+* Use NPM to install packages from NPM registry 
+* To install NPM packages like underscore
+```
+npm i underscore
+```
+* Installed packages are in dependencies in the package.json
+
+4. **Using a Package**
+
+* To use the underscore library
+```
+var _ = require('./underscore');
+```
+* Without path, it is assumed as a core module else it is treated as a file path
+
+5. **Package Dependencies**
+
+* Other libraries installed automatically is because a module requires many other modules to refer to
+
+6. **NPM Packages and Source Control**
+
+* The "node_modules" folder is big as it has all the installed packages and their dependencies and it is not advised to add it into the repository
+* All dependencies in present in package.json file
+```
+npm i
+```
+* Use ".gitignore" to store folder and file names not be included in repository
+
+7. **Semantic Versioning**
+
+* Semantic versioning is to divide the version in 3 parts or numbers called Major version, Minor version, Patch release (used in bug fixing)
+* Patch release number increases as and when bugs are fixed
+* Minor version number is to create changes in the package without creating any change in APIs
+* Major version number is to create changes in the package along with change in APIs
+* Carat character is used to suggest the minium major version for the application
+* Carat character is used to suggest the minium major version and minor version for the application
+
+8. **Listing the Installed Packages**
+
+* To see the entire list of packages and their versions
+```
+npm list
+```
+* To get the versions of the installed packages
+```
+npm list --depth=0
+```
+
+9. **Viewing Registry Info for a package**
+
+* Meta-data about the packages like mongoose
+```
+npm view mongoose
+```
+* Dependencies about the packages like mongoose
+```
+npm view dependencies
+```
+
+10. **Installing a Specific Version of a Package**
+
+* To install a specific version like "2.4.2" for a package like mongoose
+```
+npm i mongoose@2.4.2
+```
+
+11. **Updating Local Packages**
+
+* Checking the packages and their current, wanted and latest versions
+```
+npm outdated
+```
+* Update to the latest versions where only minor versions and the patch numbers are updated
+```
+npm update
+```
+* To check the latest versions, use npm-check-updates
+```
+npm-check-updates
+```
+* To update the package.json to the latest versions
+```
+ncu -u
+```
+* To install the updates
+```
+npm i
+```
+
+12. **DevDependencies**
+
+* Packages used only during development not be in production
+* Static tool used to find problems in code under devDependencies
+```
+npm i jshint --save-dev
+```
+
+13. **Uninstalling a Package**
+
+* To uninstall a package like mongoose
+```
+npm un mongoose
+```
+
+14. **Working with Global Packages**
+
+* Not project or folder specific like npm, ng
+* Usually a command line tool
+* Use "-g" flag to install or uninstall globally
+```
+npm i -g npm@5.5.1
+```
+* To upgrade to the latest
+```
+npm i -g npm
+```
+
+15. **Publishing a Package**
+
+* Create a package.json file
+```
+npm init --yes
+```
+* Create an account
+```
+npm adduser
+```
+* Login to npm
+```
+npm login
+```
+* To publish
+```
+npm publish
+```
+* Make the name of the package unique in package.json to publish the package
+* Has its own properties by npm in package.json of published package
+
+16. **Updating a Published Package**
+
+* Can not publish over previously published
+* Change version number to avoid error
+* To change the version number
+```
+npm version major
+```
+or
+```
+npm version minor
+```
+or
+```
+npm version patch
+```

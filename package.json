@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "1. **Welcome**\r * Complete Node course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehulofficial14/NodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehulofficial14/NodeJS/issues"
+  },
+  "homepage": "https://github.com/mehulofficial14/NodeJS#readme",
+  "dependencies": {
+    "mongoose": "^7.5.2",
+    "underscore": "^1.13.6"
+  }
+}
